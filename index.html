@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Enfield – Concept Website</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="effects.css">
+<link rel="stylesheet" href="photos.css">
+</head>
+<body>
+
+<!-- Reusable motorcycle illustration (generic cruiser). Colors come from CSS variables. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bike" viewBox="0 0 600 340">
+    <!-- wheels -->
+    <g fill="none">
+      <circle cx="120" cy="240" r="68" stroke="#0b0b0b" stroke-width="16"/>
+      <circle cx="480" cy="240" r="68" stroke="#0b0b0b" stroke-width="16"/>
+      <circle cx="120" cy="240" r="55" stroke="#8a8a8a" stroke-width="3"/>
+      <circle cx="480" cy="240" r="55" stroke="#8a8a8a" stroke-width="3"/>
+    </g>
+    <g stroke="#777" stroke-width="1.5">
+      <path d="M120 185V295M65 240H175M81 201L159 279M81 279L159 201"/>
+      <path d="M480 185V295M425 240H535M441 201L519 279M441 279L519 201"/>
+    </g>
+    <circle cx="120" cy="240" r="10" fill="#aaa"/>
+    <circle cx="480" cy="240" r="10" fill="#aaa"/>
+    <!-- frame & swingarm -->
+    <path d="M470 120L340 178L200 175M120 240L300 238M300 238L340 178" stroke="#1b1b1b" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <!-- rear shock -->
+    <path d="M190 170L150 232" stroke="#c9c9c9" stroke-width="7" stroke-linecap="round"/>
+    <!-- front fork -->
+    <path d="M462 118L480 240" stroke="#d0d0d0" stroke-width="9" stroke-linecap="round"/>
+    <!-- fenders -->
+    <path d="M48 218Q118 140 205 188L198 200Q125 165 62 232Z" fill="var(--body,#111)"/>
+    <path d="M432 192Q492 158 538 218L526 226Q490 184 440 204Z" fill="var(--body,#111)"/>
+    <!-- engine -->
+    <rect x="245" y="178" width="130" height="72" rx="12" fill="#2b2b2b"/>
+    <rect x="292" y="145" width="52" height="40" rx="6" fill="#383838"/>
+    <path d="M296 155H340M296 165H340M296 175H340" stroke="#555" stroke-width="2"/>
+    <circle cx="310" cy="214" r="18" fill="#444" stroke="#666" stroke-width="3"/>
+    <!-- exhaust -->
+    <rect x="130" y="246" width="195" height="18" rx="9" fill="#b9bfc4"/>
+    <rect x="112" y="248" width="30" height="14" rx="7" fill="#222"/>
+    <!-- seat -->
+    <path d="M118 152Q190 132 262 150L256 172Q190 180 124 170Z" fill="#171717"/>
+    <!-- tank -->
+    <path d="M250 128Q316 84 392 118Q404 150 380 168L258 172Q226 160 250 128Z" fill="var(--body,#111)"/>
+    <path d="M270 132Q320 104 372 124" stroke="rgba(255,255,255,.35)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- handlebar -->
+    <path d="M446 98L396 86M446 98L462 118" stroke="#1d1d1d" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <circle cx="394" cy="85" r="6" fill="#111"/>
+    <!-- headlamp -->
+    <circle cx="470" cy="124" r="25" fill="#e8e8e8" stroke="#2a2a2a" stroke-width="5"/>
+    <circle cx="470" cy="124" r="13" fill="#fff6c9"/>
+    <!-- indicator -->
+    <circle cx="448" cy="160" r="7" fill="#f2a31b"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <a href="#home" class="brand">
+    <span class="dots" aria-hidden="true"></span>
+    <span class="brand-name">ROYAL ENFIELD</span>
+  </a>
+  <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <nav>
+    <a href="#models">Models</a>
+    <a href="#about">About Us</a>
+    <a href="#support">Support</a>
+  </nav>
+</header>
+
+<!-- HERO: bike image first -->
+<section class="hero" id="home">
+  <div class="swatches" aria-label="Choose colour">
+    <button class="sw active" data-img="images/hero-lime.png" data-name="Lime" data-glow="rgba(190,240,40,.5)" style="background:#b8e61f" aria-label="Lime"></button>
+    <button class="sw" data-img="images/hero-orange.png" data-name="Orange" data-glow="rgba(255,140,30,.5)" style="background:#f08a24" aria-label="Orange"></button>
+    <button class="sw" data-img="images/hero-grey.png" data-name="Grey" data-glow="rgba(190,190,200,.4)" style="background:#8d8d88" aria-label="Grey"></button>
+    <button class="sw" data-img="images/hero-silver.png" data-name="Silver" data-glow="rgba(220,60,50,.45)" style="background:#cfd2d6" aria-label="Silver"></button>
+  </div>
+
+  <div class="hero-bike" id="heroStage" data-img="images/hero-bike.png">
+    <div class="spot"></div>
+    <div class="ring"></div>
+    <div class="ring r2"></div>
+    <div class="speed"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="bike-wrap" id="tilt">
+      <img class="hero-photo" id="heroPhoto" src="images/hero-lime.png" alt="Royal Enfield Classic in lime yellow">
+    </div>
+    <div class="floor"></div>
+    <div class="beam"></div>
+  </div>
+
+  <div class="hero-text">
+    <h1><span class="red">Royal Enfield</span> <span id="modelName">Classic</span></h1>
+    <p class="colour-tag">Colour: <b id="colourName">Lime</b></p>
+    <p>A timeless silhouette and a steady thump from the engine. Built for open roads and the freedom to just keep riding.</p>
+    <a href="#models" class="btn">Specifications <span>›</span></a>
+  </div>
+  <div class="pager"><i></i><i class="on"></i><i></i><i></i></div>
+</section>
+
+<!-- MODELS -->
+<section class="section" id="models">
+  <h2 class="title"><span class="red">Models</span></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="arch"><img src="images/classic-lime.png" alt="Royal Enfield Classic in lime yellow" loading="lazy"></div>
+      <h3>Classic – Lime</h3><p>Retro cruiser with a bold lime-yellow finish.</p>
+    </article>
+    <article class="card">
+      <div class="arch"><img src="images/classic-orange.png" alt="Royal Enfield Classic in orange" loading="lazy"></div>
+      <h3>Classic – Orange</h3><p>Classic lines in a warm orange tank and fender.</p>
+    </article>
+    <article class="card">
+      <div class="arch"><img src="images/classic-grey.png" alt="Royal Enfield Classic in grey" loading="lazy"></div>
+      <h3>Classic – Grey</h3><p>Understated grey with copper accent stripes.</p>
+    </article>
+    <article class="card">
+      <div class="arch"><img src="images/classic-silver.png" alt="Royal Enfield Classic in silver" loading="lazy"></div>
+      <h3>Classic – Silver</h3><p>Chrome-silver tank with red pinstripe details.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section alt" id="about">
+  <h2 class="title"><span class="red">About</span> Us</h2>
+  <div class="about-grid">
+    <p>Royal Enfield is one of the world's oldest motorcycle brands, with a story that began in 1901. Over the decades it has become a symbol of unhurried, soulful riding.</p>
+    <p>This site is a concept layout that celebrates that spirit: bold imagery, a dark canvas and a clear way to explore models, learn the story and get help.</p>
+    <ul class="stats">
+      <li><b>1901</b><span>Heritage</span></li>
+      <li><b>4+</b><span>Featured models</span></li>
+      <li><b>∞</b><span>Roads to ride</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="section" id="support">
+  <h2 class="title"><span class="red">Support</span></h2>
+  <div class="support-grid">
+    <div class="info">
+      <h3>How can we help?</h3>
+      <p>Ask about service, accessories or ownership. Send us a message and we'll point you in the right direction.</p>
+      <ul>
+        <li>🛠 Service &amp; maintenance</li>
+        <li>📍 Dealer information</li>
+        <li>📄 Manuals &amp; documents</li>
+      </ul>
+    </div>
+    <form id="supportForm">
+      <input type="text" placeholder="Your name" required>
+      <input type="email" placeholder="Email address" required>
+      <textarea rows="4" placeholder="How can we help?" required></textarea>
+      <button class="btn" type="submit">Send message <span>›</span></button>
+      <p class="thanks" id="thanks" hidden>Thanks! (Demo form – no message was actually sent.)</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="brand-name">ROYAL ENFIELD</span>
+  <small>Unofficial concept website for learning/portfolio purposes. Not affiliated with or endorsed by Royal Enfield.</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
